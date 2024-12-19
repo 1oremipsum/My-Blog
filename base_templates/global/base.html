@@ -1,12 +1,15 @@
 {% load static %}<!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "global/css/style.css" %}">
-    <title>Document</title>
-</head>
-<body>
-    <h1>The quick brown fox jumps over the lazy dog</h1>
-</body>
+    <head>
+        {% include "global/partials/_head.html" %}
+    </head>
+    <body>
+        {% include "global/partials/_header.html" %}
+        {% include "global/partials/_messages.html" %}
+        {% block content %}{% endblock content %}
+        {% include "global/partials/_pagination.html" %}
+    </body>
+    <footer>
+        {% include "global/partials/_footer.html" %}
+    </footer>
 </html>
